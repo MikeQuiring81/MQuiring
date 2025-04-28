@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Outline</title>
+    <script>
+        window.addEventListener("load", makeOutline);
+
+        function makeOutline() {
+            var source = document.getElementById("doc"); 
+            var outline = document.getElementById("outline"); 
+
+            var headings = source.querySelectorAll("h1, h2, h3, h4, h5, h6"); 
+            var ol = document.createElement("ol"); 
+            var stack = [ { level: 0, list: ol } ]; 
+
+            headings.forEach(heading => {
+                var level = parseInt(heading.tagName[1]); 
+                var li = document.createElement("li");
+                li.textContent = heading.textContent;
+
+                while (stack[stack.length - 1].level >= level) {
+                    stack.pop(); 
+                }
+
+                var parentList = stack[stack.length - 1].list;
+                parentList.appendChild(li);
+
+                var newList = document.createElement("ol");
+                li.appendChild(newList);
+                stack.push({ level: level, list: newList });
+            });
+
+            outline.appendChild(ol);
+        }
+    </script>
+</head>
+<body>
+    <div id="doc">
+        <h1>Main I</h1>
+        <h2>Sub A</h2>
+        <h3>Minor 1</h3>
+        <h3>Minor 2</h3>
+        <h2>Sub B</h2>
+        <h1>Main II</h1>
+        <h2>Sub A</h2>
+        <h3>Minor 1</h3>
+    </div>
+
+    <h2>Generated Outline:</h2>
+    <div id="outline"></div>
+</body>
+</html>
