@@ -1,0 +1,607 @@
+/* Variables for easy color changes - Restaurant Theme */
+:root {
+    --primary-color: #5A3E2B; /* Dark Brown - rich, earthy */
+    --secondary-color: #E48257; /* Rustic Orange - warm accent */
+    --accent-green: #2E402B; /* Dark Green - subtle, natural */
+    --text-color: #333;
+    --light-bg: #F8F4F0; /* Creamy off-white */
+    --dark-bg: #333; /* For header/footer */
+    --border-color: #ddd;
+    --white: #ffffff;
+}
+
+/* Basic Reset & Body Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light-gray {
+    background-color: #f8f8f8; /* A slightly lighter shade for contrast */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3.5em; }
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 3em;
+    position: relative;
+    padding-bottom: 10px;
+    color: var(--accent-green);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Header & Navigation */
+header {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+nav .logo a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px; /* Space from nav links */
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.05em;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: 2px solid var(--secondary-color);
+}
+
+.primary-button:hover {
+    background: #c26a45; /* Darker orange */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.secondary-button {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.secondary-button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.large-button {
+    padding: 15px 35px;
+    font-size: 1.2em;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x800/8B4513/FFFFFF?text=Delicious+Restaurant+Food') no-repeat center center/cover; /* Replace with your own image */
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--white);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Menu Section */
+.menu-tabs {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tab-button {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    margin: 0 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.tab-button:hover:not(.active) {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+.menu-category {
+    display: none; /* Hidden by default */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.menu-category.active-category {
+    display: grid; /* Show active category */
+}
+
+.menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu-item .price {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.menu-item p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Our Story Section */
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.story-content img {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.story-content div {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Gallery Section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: var(--secondary-color);
+    font-size: 1.3em;
+}
+
+.contact-info p a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-info p a:hover {
+    color: var(--secondary-color);
+}
+
+.hours-table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Adjust as needed */
+    max-width: 400px;
+}
+
+.hours-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table th, .hours-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hours-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.hours-table tr:last-child td {
+    border-bottom: none;
+}
+.hours-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.social-icons {
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-right: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.map-embed {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 50px 0 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-col p, .footer-col ul {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .nav-buttons {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+        order: 1; /* Pushes buttons below nav links */
+    }
+
+    nav ul {
+        width: 100%;
+        order: 2; /* Pushes nav links below buttons if needed */
+        margin-top: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.3em;
+    }
+
+    .story-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-content img {
+        margin-bottom: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+
+    .contact-info, .map-embed {
+        max-width: 600px; /* Constrain width for better readability */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hours-table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2.2em; }
+    .hero-content p { font-size: 1.1em; }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .large-button {
+        width: 80%; /* Make buttons full width */
+        margin: auto;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .menu-item img {
+        margin-bottom: 15px;
+    }
+    .menu-item h3 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-item .price {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo a {
+        font-size: 1.8em;
+    }
+    nav ul li {
+        margin: 0 8px 8px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .large-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .map-embed iframe {
+        height: 300px;
+    }
+}
